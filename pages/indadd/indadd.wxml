@@ -1,0 +1,120 @@
+<view class='container'>
+  <image class="img" src="/images/bgimage.png"></image>
+  <view class="head">
+    <view class="head_list" bindtap="childmessage">
+      <image class="head_img" src="/images/xigl.png"></image>
+      <view class="head_text">信息管理</view>
+    </view>
+    <view class="head_list" >
+      <image class="head_img" src="/images/jzgl.png"></image>
+      <view class="head_text">家长管理</view>
+    </view>
+    <view class="head_list" bindtap="tapOneDialogButton">
+      <image class="head_img" src="/images/fkyy.png"></image>
+      <view class="head_text">访客预约</view>
+    </view>
+    <view class="head_list" bindtap="appointment">
+      <image class="head_img" src="/images/frzx.png"></image>
+      <view class="head_text">个人中心</view>
+    </view>
+  </view>
+  <view class="boday">
+    <view class="boday_tittle">
+      <view class="boday_cion"></view>
+      <view class="boday_text">学生管理</view>
+    </view>
+    <view wx:for="{{bodaybox}}" wx:key="key">
+      <movable-area class='movable-area'>
+        <movable-view direction="horizontal" class='movable-view'>
+          <view class="touch-item {{item.isTouchMove ? 'touch-move-active' : ''}}" data-index="{{index}}" bindtouchstart="touchstart" bindtouchmove="touchmove">
+            <view class="content">
+              <image class="boday_img" src="/images/photo1.png"></image>
+              <view class="boday_msg">
+                <view class="boday_msg_text">姓名：{{item != null? item.name:"暂无"}}</view>
+                <view class="boday_msg_text">{{item != null? item.idCard:"暂无身份证号"}}</view>
+                <view class="boday_msg_text">班级：{{item != null? item.team:"暂无"}}</view>
+              </view>
+              <view class="boday_box_but" wx:if="{{item.name=='暂无'}}" bindtap="associatestudents">绑定</view>
+            </view>
+            <view class="del" catchtap="del" data-id="{{item.id}}" data-index="{{index}}" >删除</view>
+          </view>
+          <!-- <view class="del" catchtap="del" data-index="{{index}}">删除</view> -->
+        </movable-view>
+      </movable-area>
+      <view class="divLine"></view>
+    </view>
+    <view class="boday_last" bindtap="insert"><image class="boday_last_img" src="/images/jh.png"></image></view>
+  </view>
+  <view class="buttom">
+    <view class="boday_tittle">
+      <view class="boday_cion"></view>
+      <view class="boday_text">消息通知</view>
+    </view>
+    <view class="buttom_box">
+      <image class="buttom_img" src="/images/photo1.png"></image>
+      <view class="buttom_msg">
+        <view class="buttom_msg_tittle">标题一</view>
+        <view class="buttom_msg_text">内容内容内容内容内容内容</view>
+      </view>
+    </view>
+  </view>
+
+
+  <view class="zan-dialog {{ showDialog ? 'zan-dialog--show' : '' }}">
+    <view class="zan-dialog__mask" />
+    <view class="zan-dialog__container">
+      <view class="zan-tittle">实名认证</view>
+      <button  bindtap="chooseimage" class="but"   plain='true' style="width:97px;height:110px;plain:true;border-style: dashed;">
+        <image src="{{photo}}"  mode="aspectFill" class="img111" />
+      </button>
+      <view class="massage">
+        <view class="table">
+          <label class="idcard">身份证号：</label>
+          <input phone class="table-Text" type="idcard" maxlength="18" placeholder="" bindinput="idcardInput" />
+        </view>
+        <view class="table">
+          <label class="name" >姓名：</label>
+          <input phone class="table-Text" placeholder="" bindinput="nameInput" />
+        </view>
+        <view class="table">
+          <label class="account">手机号：</label>
+          <input  class="table-Text" type="number" maxlength="11" placeholder="" bindinput="accountInput" />
+        </view>
+      </view>
+      <view class="botbut">
+        <button class="submit" style="width:232rpx;height:64rpx;line-height:64rpx;" bindtap="toggleDialog">信息提交</button>
+        <view class="but_text">实名认证信息不可更改，请谨慎填写！</view>
+      </view>
+    </view>
+  </view>
+
+  <view class="zan-dialog {{ showchild ? 'zan-dialog--show' : '' }}">
+    <view class="zan-dialog__mask" bindtap="showchildclose"/>
+    <view class="zan-dialog__container">
+      <view class="chi-tittle">关联学生</view>
+      <view class="election">
+        <input class="terpho_in" type="idcard" bindinput="chiidcardInput" name="pterhone" placeholder="输入身份证号" maxlength="18" id="pterhone" />
+        <view class="terpho_but" bindtap="InquiryButton">查询</view>
+      </view>
+      <view class="chi_msg">
+        <view class="chi_msg_text"><text class="chi_msg_con">学生姓名：</text>{{chimes.name}}</view>
+        <view class="chi_msg_text"><text class="chi_msg_con">学校名称：</text>{{chimes.schoolName}}</view>
+        <view class="chi_msg_text"><text class="chi_msg_con">年级：</text>{{chimes.grade}}</view>
+        <view class="chi_msg_text"><text class="chi_msg_con">类别：</text>{{chistype}}</view>
+        <view class="chi_msg_text"><text class="chi_msg_con">班级：</text>{{chimes.team}}</view>
+        <view class="chi_election"> 
+          <picker bindchange="bindPickerChange" value="{{index}}" range="{{array}}" range-key="name">
+            <view class="picker" >
+              {{array[index].name}}
+            </view>
+          </picker>
+          <image class="election_img" src="/images/5.png"></image>
+      </view>
+      </view>
+      <view class="chi_botbut">
+        <button class="submit" style="width:232rpx;height:64rpx;line-height:64rpx;" bindtap="confirmbinding">确认绑定</button>
+        <!-- <view class="but_text">实名认证信息不可更改，请谨慎填写！</view> -->
+      </view>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,79 @@
+.container{
+  background-color: #F5F4F9;
+  min-height:100vh;
+  /* display: flex;
+  flex-direction: column;
+  justify-content: start; */
+  /* overflow:scroll; */
+}
+.head{
+  margin-top: 28rpx;
+  width: 720rpx;
+  min-height: 90vh;
+  /* background-color: teal; */
+  border-radius: 12rpx;
+  background-color: #ffffff;
+  margin-bottom: 40rpx;
+}
+.tittle{
+  width: 644rpx;
+  font-size: 35rpx;
+  color: #666666;
+  margin:auto;
+  margin-top: 28rpx;
+  margin-bottom: 50rpx;
+  display: flex;
+}
+.section__title{
+  margin-left: 10rpx;
+}
+.list{
+  /* margin: auto; */
+  margin-left: 28rpx;
+  width: 660rpx;
+  height: 140rpx;
+  display: flex;
+  align-items: center;
+  margin-top: 28rpx;
+}
+.img{
+  width: 96rpx;
+  height: 134rpx;
+}
+.massage{
+  height: 134rpx;
+  width: 500rpx;
+  margin-left: 25rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.list_text{
+  font-size: 28rpx;
+  color: #333333;
+}
+.operation{
+  font-size: 28rpx;
+  color: #333333;
+  width:150rpx;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-left: 40rpx;
+}
+.opera_text{
+  color: #999999;
+  font-size: 26rpx;
+}
+.opera_img{
+  width: 10rpx;
+  height: 20rpx;
+}
+.divLine{
+  background: #F9F9F9;
+  width: 644rpx;
+  height: 2rpx;
+  margin: auto;
+  margin-top: 20rpx;
+  margin-bottom: 20rpx;
+ }

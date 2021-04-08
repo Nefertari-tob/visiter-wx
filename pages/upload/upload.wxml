@@ -1,0 +1,29 @@
+<view class='container'>
+  <view class="index">
+    <view class="kuang">
+        <view class='body'>
+          <view>
+            <!-- <image class="icon-a" src="/images/1.png"></image> -->
+          </view>
+          <view class="title">
+            <!-- <text>江苏云向量智能科技有限公司</text> -->
+          </view>
+        </view>
+    </view>
+    <view class="version">
+        <text>人工智能数据支撑平台</text>
+    </view>
+    <view class="below">
+      <view class="tex-a">
+       <!-- <image class="icon-c" src="/images/1.png" mode="widthFix"></image>云向量平台申请  -->
+      </view>
+      <view class="tex-b">您的信息用于快捷登录</view>
+      <view class="tex-c">
+        <view class="button">
+          <button class="button-a" bindtap="accessdenied" style="width:250rpx;height:70rpx;line-height:70rpx;"><navigator class="btn-confirm" open-type="exit" target="miniProgram" hover-class="none">拒绝</navigator></button>
+          <button class="button-b" bindtap="agreetovisit"  open-type="getUserInfo" lang="zh_CN" bindgetuserinfo="bindGetUserInfo" style="width:250rpx;height:70rpx;line-height:70rpx;">进入系统</button>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

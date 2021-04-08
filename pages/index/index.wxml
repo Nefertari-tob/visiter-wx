@@ -1,0 +1,80 @@
+<view class='container'>
+  <view class="head">
+    <view class="head-top">
+      <view class="user">
+        <image class="userinfo-avatar" src="{{userurl}}" ></image>
+        <view class="user-massage">
+          <view class="userinfo-nickname" >{{msg.name}}</view>
+          <view class="userinfo-nickname">{{msg.idCard}}</view>
+        </view>
+      </view>
+      <!-- <button class="otheruser" style="width:120rpx;height:40rpx;line-height:38rpx;"  bindtap="onCancel1">身份切换</button> -->
+    </view>
+    <view class="head-left">
+      <view class="myhome letext">我的家庭</view>
+      <view class="appointment letext" type="default" bindtap="tapOneDialogButton">访客预约</view>
+    </view>
+  </view>
+  <view class="body">
+    <view class="tittle">
+      <view class="cion"></view>
+      <view class="tit_text">菜单列表</view>
+    </view>
+    <view class="listone">
+      <image src="/images/1.png" class="img_1"></image>
+      <view class="lis_text">请假申请</view>
+      <image src="/images/5.png" class="img_2"></image>
+    </view>
+    <view class="listone">
+      <image src="/images/2.png" class="img_1"></image>
+      <view class="lis_text">消息通知</view>
+      <image src="/images/5.png" class="img_2"></image>
+    </view>
+    <view class="listone">
+      <image src="/images/3.png" class="img_1"></image>
+      <view class="lis_text">接送记录</view>
+      <image src="/images/5.png" class="img_2"></image>
+    </view>
+    <view class="listone">
+      <image src="/images/4.png" class="img_1"></image>
+      <view class="lis_text">意见反馈</view>
+      <image src="/images/5.png" class="img_2"></image>
+    </view>
+    <view class="listone" bindtap="appointment">
+      <image src="/images/4.png" class="img_1"></image>
+      <view class="lis_text">预约记录</view>
+      <image src="/images/5.png" class="img_2"></image>
+    </view>
+  </view>
+  <view class="tail">
+    <view class="tail_2" bindtap="onCancel1">切换登录</view>
+    <!-- <view class="tail_2">退出登录</view> -->
+  </view>
+  <view class="zan-dialog {{ showDialog ? 'zan-dialog--show' : '' }}">
+    <view class="zan-dialog__mask" />
+    <view class="zan-dialog__container">
+      <view class="zan-tittle">实名认证</view>
+      <button  bindtap="chooseimage" class="but"   plain='true' style="width:97px;height:110px;plain:true;border-style: dashed;">
+        <image src="{{photo}}"  mode="aspectFill" class="img" />
+      </button>
+      <view class="massage">
+        <view class="table">
+          <label class="idcard">身份证号：</label>
+          <input phone class="table-Text" type="idcard" maxlength="18" placeholder="" bindinput="idcardInput" />
+        </view>
+        <view class="table">
+          <label class="name" >姓名：</label>
+          <input phone class="table-Text" placeholder="" bindinput="nameInput" />
+        </view>
+        <view class="table">
+          <label class="account">手机号：</label>
+          <input  class="table-Text" type="number" maxlength="11" placeholder="" bindinput="accountInput" />
+        </view>
+      </view>
+      <view class="botbut">
+        <button class="submit" style="width:232rpx;height:64rpx;line-height:64rpx;" bindtap="toggleDialog">信息提交</button>
+        <view class="but_text">实名认证信息不可更改，请谨慎填写！</view>
+      </view>
+    </view>
+  </view>
+</view>

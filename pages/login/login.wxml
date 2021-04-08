@@ -1,0 +1,31 @@
+<view class="longin" wx:if="{{isHide}}">
+    <view wx:if="{{canIUse}}" >
+        <view class="bgheader">
+            <!-- <view class='header'>
+                <image src='/images/6.png'></image>
+            </view> -->
+        </view>
+
+        <view class='content'>
+            <view class="content_text1">云析家校安全一体化平台</view>
+            <view class="content_text1">申请获取以下权限</view>
+            <text class="content_text2">获得你的公开信息(昵称，头像等)</text>
+            <text class="content_text2">用于考勤、访客、到离校、归寝等服务</text>
+        </view>
+ 
+        <button class='bottom bottom11' style="width:582rpx;height:88rpx;line-height:88rpx;background-color:#7ACBB3;color:#FFFFFF" open-type="getUserInfo" lang="zh_CN" bindgetuserinfo="bindGetUserInfo">
+            授权登录
+        </button>
+        <button class='bottom bottom22' style="width:582rpx;height:88rpx;line-height:88rpx;background-color:#F2F2F2;color:#7ACBB3"  bindtap="bindNotUserInfo">
+            取消授权
+        </button>
+    </view>
+    <view wx:else>请升级微信版本</view>
+</view>
+
+<view wx:else  class="container">
+  <view class="body">
+    <view class="bgimg"  bindtap="visitorButton">监护人/访客</view>
+    <view class="bgimg"  bindtap="adminButton">教职工/管理员</view>
+  </view>
+</view>

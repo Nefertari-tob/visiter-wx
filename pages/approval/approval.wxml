@@ -1,0 +1,62 @@
+<view class="container">
+  <view class="conhead">
+    <view class="conback">
+    <view class="head">
+      <button class="adopt" bindtap="throughButton" style="width:350rpx;height:94rpx;line-height:94rpx">一键通过</button>
+    </view>
+    <view class="body">
+      <view class="tittle">
+        <view class="tittle_1">
+          <view class="cion"></view>
+          <view class="tit_text">审批列表</view>
+        </view>
+        <view class="myvisitor"  bindtap="myvisitorButton">我的访客</view>
+      </view>
+      <!-- <view class="bodytable"> -->
+        <view wx:for="{{datalist}}" data-item="item" wx:for-index="index">
+        <view class="list">
+          <image class="img" src="{{userurl + item.visitor.picture}}"></image>
+          <!-- <view class="img">{{item.visitor.picture}}</view>  -->
+          <view class="massage" >
+            <view class="list_text">姓名：{{item.visitor.name}}</view>
+            <view class="list_text">访客类型：{{item.type}}</view>
+            <view class="list_text">来访时间：{{item.visitDate}}</view>
+          </view>
+          <view class="operation" bindtap="tapOneDialogButton" id="{{item.id}}">
+            <view class="opera_text" >查看</view>
+            <image class="opera_img" src="/images/5.png" />
+          </view>
+        </view>
+          <view class="divLine"></view>
+        </view>
+      <!-- </view> -->
+    </view>
+    </view>
+  </view>
+  <view class="zan-dialog {{ showDialog ? 'zan-dialog--show' : '' }}">
+    <view class="zan-dialog__mask"  bindtap="toggleDialog"/>
+    <view class="zan-dialog__container">
+      <view class="photo"><image class="picture" src="{{url}}"></image></view>
+      <view class="mas_text">{{msg.visitor.name}}</view>
+      <view class="mas_text">{{msg.visitor.idCard}}</view>
+      <view class="mas_text">{{sex}}</view>
+      <view class="mas_text">{{msg.phone}}</view>
+      <view class="last">
+        <view class="lat_text"><p>访客类型：</p></view>
+        <view class="lst_text">{{msg.type}}</view>
+      </view>
+      <view class="last">
+        <view class="lat_text"><p>来访时间：</p></view>
+        <view class="lst_text">{{msgdata}}</view>
+      </view>
+      <view class="last">
+        <view class="lat_text"><p>备注：</p></view>
+        <view class="lst_text">{{msg.reason}}</view>
+      </view>
+      <view class="but">
+        <button class="but_1 but_3" style="width:176rpx;height:64rpx;line-height:64rpx;" bindtap="ydoptButton">通过</button>
+        <button class="but_2 but_3" style="width:176rpx;height:64rpx;line-height:64rpx;" bindtap="adoptButton">拒绝</button>
+      </view>
+    </view>
+  </view>
+</view>

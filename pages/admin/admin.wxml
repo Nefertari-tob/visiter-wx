@@ -1,0 +1,72 @@
+<view class='container'>
+  <view class="head">
+    <view class="head-top">
+      <view class="user">
+        <view class="photobut">
+          <button  bindtap="chooseimage" class="but"   plain='true' style="width:120rpx;height:120rpx;plain:true;border:none;">
+          <image src="{{photo}}"  mode="aspectFill" class="img" />
+        </button>
+        </view>
+        <!-- <image class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image> -->
+        <view class="user-massage">
+          <view class="userinfo-nickname">{{msg.name}}</view>
+          <view class="userinfo-nickname">{{msg.phone }}</view>
+        </view>
+      </view>
+      <!-- <button class="otheruser" style="width:120rpx;height:40rpx;line-height:38rpx;"  bindtap="onCancel1">身份切换</button> -->
+    </view>
+    <view class="head-left">
+      <view class="myhome letext">当日考勤</view>
+      <view class="appointment letext">我的班级</view>
+      <view class="appointment letext" type="default" bindtap="tapOneDialogButton">访客审批</view>
+    </view>
+  </view>
+  <view class="body">
+    <view class="tittle">
+      <view class="cion"></view>
+      <view class="tit_text">菜单列表</view>
+    </view>
+    <view class="listone">
+      <image src="/images/1.png" class="img_1"></image>
+      <view class="lis_text">请假申请</view>
+      <image src="/images/5.png" class="img_2"></image>
+    </view>
+    <view class="listone">
+      <image src="/images/2.png" class="img_1"></image>
+      <view class="lis_text">消息通知</view>
+      <image src="/images/5.png" class="img_2"></image>
+    </view>
+    <view class="listone">
+      <image src="/images/3.png" class="img_1"></image>
+      <view class="lis_text">接送记录</view>
+      <image src="/images/5.png" class="img_2"></image>
+    </view>
+    <view class="listone">
+      <image src="/images/4.png" class="img_1"></image>
+      <view class="lis_text">意见反馈</view>
+      <image src="/images/5.png" class="img_2"></image>
+    </view>
+  </view>
+  <view class="tail">
+    <view class="tail_2" bindtap="onCancel1">切换登录</view>
+    <!-- <view class="tail_2">退出登录</view> -->
+  </view>
+  <view class="zan-dialog {{ showDialog ? 'zan-dialog--show' : '' }}">
+    <view class="zan-dialog__mask"  />
+    <view class="zan-dialog__container">
+      <view class="massage">
+        <view class="table">
+          <label class="account">账号：</label>
+          <input  class="table-Text"  bindinput="accountInput" maxlength="11" placeholder="" />
+        </view>
+        <view class="table">
+          <label class="account">密码：</label>
+          <input  class="table-Text"  bindinput="passwordInput" maxlength="11" placeholder="" />
+        </view>
+      </view>
+      <view class="botbut">
+        <button class="submit" style="width:232rpx;height:64rpx;line-height:64rpx;" bindtap="toggleDialog">绑定登录</button>
+      </view>
+    </view>
+  </view>
+</view>

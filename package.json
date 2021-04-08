@@ -1,0 +1,19 @@
+{
+  "name": "visitor-applet",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "dependencies": {
+    "@vant/weapp": "^1.6.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://gitee.com/gfh_7067576/visitor-applet.git"
+  },
+  "author": "",
+  "license": "ISC"
+}

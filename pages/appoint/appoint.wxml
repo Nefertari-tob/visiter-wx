@@ -1,0 +1,85 @@
+<view class='container'>
+  <view class="box">
+  <view class="head">
+    <view class="head-top">
+      <view class="user">
+        <image class="userinfo-avatar" src="{{url}}" mode="cover"></image>
+        <view class="user-massage">
+          <view class="userinfo-nickname">{{msg.name}}</view>
+          <view class="userinfo-nickname">{{msg.idCard }}</view>
+          <view class="choice">
+            <input class="phone" bindinput="CompanyInput" placeholder="访客单位(家长请填家长)" id="Company" />
+            <!-- <radio-group bindchange="radiochange">
+              <radio value='1'>男</radio>
+              <radio class="choice_one" value='0'>女</radio>
+            </radio-group> -->
+          </view>
+          <view class="phone_input">
+            <input class="phone" type="number" value="{{ msg.phone }}" bindinput="phoneInput" name="phone" maxlength="11" id="phone"/>
+          </view>
+        </view>
+      </view>
+      <button class="otheruser" style="width:120rpx;height:40rpx;line-height:38rpx;"  bindtap="onCancel1">预约记录</button>
+    </view>
+  </view>
+  <view class="body">
+    <view class="list">
+      <view class="list1">
+        <image class="list_img" src="/images/red .png"></image>
+        <!-- <text class="list_text">到访时间：</text> -->
+      </view>
+      <view class="election">
+        <picker mode="multiSelector" value="{{dateTime1}}" bindchange="changeDateTime1" bindcolumnchange="changeDateTimeColumn1" range="{{dateTimeArray1}}">
+        <view class="picker">
+          到访时间: {{dateTimeArray1[0][dateTime1[0]]}}-{{dateTimeArray1[1][dateTime1[1]]}}-{{dateTimeArray1[2][dateTime1[2]]}} {{dateTimeArray1[3][dateTime1[3]]}}:{{dateTimeArray1[4][dateTime1[4]]}}
+        </view>
+        </picker>
+        </view>
+      <!-- <view class="election">
+        <picker mode="multiSelector" value="{{dateTime1}}" bindchange="changeDateTime1"  range="{{dateTimeArray1}}">
+        <view class="picker">
+          到访时间：{{dateTimeArray1[0][dateTime1[0]]}}-{{dateTimeArray1[1][dateTime1[1]]}}-{{dateTimeArray1[2][dateTime1[2]]}} {{dateTimeArray1[3][dateTime1[3]]}}:{{dateTimeArray1[4][dateTime1[4]]}}
+        </view>
+        </picker>
+        <image class="election_img" src="/images/5.png"></image>
+      </view> -->
+    </view>
+    <view class="list">
+      <view class="list1">
+        <image class="list_img" src="/images/red .png"></image>
+        <!-- <text class="list_text">来访事项：</text> -->
+      </view>
+      <view class="election"> 
+          <!-- <picker bindchange="bindPickerChange" value="{{Visitindex}}" range="{{Visitarray}}">
+            <view class="picker">
+              来访事项：{{Visitarray[Visitindex]}}
+            </view>
+          </picker> -->
+          <picker bindchange="bindPickerChange" value="{{index}}" range="{{array}}" range-key="name">
+            <view class="picker">
+              来访事项：{{array[index].name}}
+            </view>
+          </picker>
+          <image class="election_img" src="/images/5.png"></image>
+      </view>
+    </view>
+  </view>
+  <view class="bottom">
+    <view class="listbottom">
+      <view class="election terpho">
+        <input class="terpho_in" type="number" bindinput="pterhoneInput" name="pterhone" placeholder="输入受访人手机号查询" maxlength="11" id="pterhone" />
+        <view class="terpho_but" bindtap="phoneButton">查询</view>
+      </view>
+    </view>
+    <view class="message">姓名：{{message.teacherName}}</view>
+    <view class="message">部门：{{message.deptName}}</view>
+    <view class="message">学校：{{message.schoolName}}</view>
+    <view class="message">区域：{{message.areaName}}</view>
+    <!-- <input class="message"  disabled="true"   placeholder="姓名"><p>{{message.teacherName}}</p></input>
+    <input class="message"  disabled="true"   placeholder="部门" value="{{message.deptName}}"/>
+    <input class="message"  disabled="true"   placeholder="学校" value="{{message.schoolName}}"/>
+    <input class="message"  disabled="true"   placeholder="区域" value="{{message.areaName}}"/> -->
+  </view>
+</view>
+    <button class="but" bindtap="submitButton" style="width:636rpx;height:64rpx;line-height:64rpx">确认提交</button>
+</view>

@@ -1,0 +1,182 @@
+<!--pages/childmsg1/childmsg1.wxml-->
+<view class="container">
+  <view class="head">
+    <view class="topchild flex">
+      <view class="ImageTap" bindtap="chooseImageTap">
+        <image class="userinfo-avatar" src="../../images/headportrait.png"></image>
+        <view class="amend">
+          <image class="sex" src="../../images/change@2x.png"></image>
+          (修改照片）
+        </view>
+      </view>
+      <view class="name">
+        <view style="color: #7F7F7F;">
+          姓名: 王可爱
+          <image wx:if="{{sex == 0}}" class="sex" src="../../images/girl.png"></image>
+          <image wx:elif="{{sex == 1}}" class="sex" src="../../images/man.svg"></image>
+        </view>
+        <view class="flex" bindtap="showEye">
+          <input class="userId" style="font-size: 30rpx" type="nunber" disabled value="{{value}}" />
+          <image wx:if="{{eye}}" class="eye" src="../../images/beye.png"></image>
+          <image wx:else="{{eye}}" class="eye" src="../../images/oeye.png"></image>
+        </view>
+        <view style="color: #7F7F7F;">学号: 暂无</view>
+      </view>
+      <view>
+        <view class="uploading">
+          未绑定
+        </view>
+      </view>
+    </view>
+    <view class="flex msgStatus">
+      <view></view>
+      <button class="btn btn1">解除绑定</button>
+      <button class="btn btn2">相关记录</button>
+    </view>
+  </view>
+  <view class="main">
+    <van-tabs offset-top="" color="#7ACBB3FF" active="{{ active }}" bind:change="onChange">
+      <van-tab title="基础信息">
+        <view class="tabs1">
+          <view class="line flex">
+            <view>省市：</view>
+            <view>南京市</view>
+          </view>
+          <view class="line flex">
+            <view>县区：</view>
+            <view>鼓楼区</view>
+          </view>
+          <view class="line flex">
+            <view>类型：</view>
+            <view>南京市</view>
+          </view>
+          <view class="line flex">
+            <view>学校：</view>
+            <view>某某育儿园</view>
+          </view>
+          <view class="line flex">
+            <view>年级：</view>
+            <view>2019级</view>
+          </view>
+          <view class="line flex">
+            <view>类别：</view>
+            <view>常规班</view>
+          </view>
+          <view class="line flex">
+            <view>班级：</view>
+            <view>1班</view>
+          </view>
+          <view class="line flex">
+            <view>毕业时间：</view>
+            <view>2020-09-23</view>
+          </view>
+          <view class="line flex">
+            <view>班主任：</view>
+            <view>马老师</view>
+          </view>
+          <view class="line flex">
+            <view>联系方式：</view>
+            <view>12121343546</view>
+          </view>
+        </view>
+      </van-tab>
+      <van-tab title="家长信息">
+        <view wx:for="{{3}}" wx:key="item" class="tabs2 flex">
+          <view>
+            <image mode="aspectFill" src="/images/photo1.png"></image>
+          </view>
+          <view>
+            <view>姓名：王文文 <text> (自己）</text></view>
+            <view class="mr">手机：1347747888989</view>
+            <view>有效期：2022-12-21</view>
+          </view>
+          <view class="untie">解绑 </view>
+        </view>
+      </van-tab>
+      <van-tab title="上学信息">
+        <view class="tabs1">
+          <view class="line flex">
+            <view>校区：</view>
+            <view>本部</view>
+          </view>
+          <view class="line flex">
+            <view>上学时间：</view>
+            <view>7：20</view>
+          </view>
+          <view class="line flex">
+            <view>放学时间：</view>
+            <view>18：00</view>
+          </view>
+          <view class="line flex">
+            <view>有效期：</view>
+            <view>2022-08-12</view>
+          </view>
+          <view class="line flex">
+            <view>接送人员：</view>
+            <view>学生自己</view>
+          </view>
+          <view class="line flex">
+            <view></view>
+            <view>王爸爸 <text style="color: #76CAB1FF;">(父亲）</text></view>
+          </view>
+          <view class="line flex">
+            <view></view>
+            <view>王妈妈 <text style="color: #76CAB1FF;">(母亲)</text></view>
+          </view>
+        </view>
+      </van-tab>
+      <van-tab title="住宿信息">
+        <view class="tabs1">
+          <view class="line flex">
+            <view>校区：</view>
+            <view class="flex campas">
+              <view>本部</view>
+              <view bindtap="campus">编辑</view>
+            </view>
+          </view>
+          <view class="line flex">
+            <view>组团：</view>
+            <view>学生宿舍</view>
+          </view>
+          <view class="line flex">
+            <view>宿舍楼：</view>
+            <view>23栋</view>
+          </view>
+          <view class="line flex">
+            <view>楼层：</view>
+            <view>23层</view>
+          </view>
+          <view class="line flex">
+            <view>房间号：</view>
+            <view>2022</view>
+          </view>
+          <view class="line flex">
+            <view>归寝时间：</view>
+            <view>18：00</view>
+          </view>
+          <view class="line flex">
+            <view>有效期：</view>
+            <view>2022-08-12</view>
+          </view>
+          <view class="line flex">
+            <view>宿管电话：</view>
+            <view>025-111111234141</view>
+          </view>
+        </view>
+      </van-tab>
+      <van-tab title="其他">内容 4</van-tab>
+    </van-tabs>
+  </view>
+  <view wx:if="{{falg}}" catchtap="campus" class="compile">
+    <view catchtap class="compileBox">
+     <view>
+      <view style="margin-bottom: 20rpx">当前校区：</view>
+      <view class="flex">
+        <view>校区：</view>
+        <input focus type="text" model:value="{{campus}}" placeholder="请输入" />
+      </view>
+      <button catchtap="save" data-status="1" data-num="5" style="width: 200rpx; height: 70rpx; line-height: 70rpx; margin-top: 50rpx; background: #76CAB1FF; color: #fff;">保存</button>
+     </view>
+    </view>
+  </view>
+</view>

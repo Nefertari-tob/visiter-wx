@@ -1,0 +1,35 @@
+<view class="container">
+  <view class="head">
+    <!-- <view class="tittle">日期选择</view> -->
+    <view class="tittle">
+      <!-- <view>{{currenTime}}</view> -->
+      <picker mode="date" value="{{data}}" bindchange="bindDateChange">
+        <view class="picker">
+          到访日期选择  {{visitDate}}
+        </view>
+      </picker>
+    </view>
+    <!-- <view class="bodytable"> -->
+    <view class="list" wx:for="{{datalist}}" data-item="item" wx:for-index="index">
+      <image class="img" src="{{userurl + item.visitor.picture}}"></image>
+        <!-- <view class="img"></view> -->
+        <view class="massage">
+          <view class="list_text">姓名：{{item.visitor.name}}</view>
+          <view class="list_text">访客类型：{{item.type}}</view>
+          <view class="list_text">来访时间：{{(item.visitDate)}}</view>
+        </view>
+        <view style="margin-left:40rpx;color:#333333;font-size: 28rpx;">
+          <view wx:if="{{item.status == 1}}">通过</view>
+          <view wx:elif="{{item.status == 2}}">未通过</view>
+          <view wx:else="{{item.status == 0}}">待审批</view>
+          <!-- <view class="list_text">{{item.status}}</view> -->
+        </view>
+        <!-- <view class="operation" bindtap="tapOneDialogButton">
+          <view class="opera_text">查看</view>
+          <image class="opera_img" src="/images/5.png" />
+        </view> -->
+      </view>
+    <!-- </view> -->
+      <view class="divLine"></view>
+  </view>
+</view>

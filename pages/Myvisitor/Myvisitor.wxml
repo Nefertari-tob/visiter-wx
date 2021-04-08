@@ -1,0 +1,29 @@
+<view class="container">
+  <view class="head">
+    <!-- <view class="tittle">日期选择</view> -->
+    <view class="tittle">
+      <!-- <view>{{currenTime}}</view> -->
+      <picker mode="date" value="{{data}}" bindchange="bindDateChange">
+        <view class="picker">
+          日期选择  {{visitDate}}
+        </view>
+      </picker> 
+    </view>
+    <!-- <view class="bodytable"> -->
+    <view class="list" wx:for="{{datalist}}" data-item="item" wx:for-index="index">
+      <image class="img" src="{{userurl + item.visitor.picture}}"></image>
+        <!-- <view class="img"></view> -->
+        <view class="massage">
+          <view class="list_text">姓名：{{item.visitor.name}}</view>
+          <view class="list_text">访客类型：{{item.type}}</view>
+          <view class="list_text">来访时间：{{item.visitDate}}</view>
+        </view>
+        <view class="operation" bindtap="tapOneDialogButton">
+          <view wx:if="{{item.register == 1}}">线下预约</view>
+          <view wx:if="{{item.register == 0}}">线上预约</view>
+        </view>
+      </view>
+    <!-- </view> -->
+      <view class="divLine"></view>
+  </view>
+</view>

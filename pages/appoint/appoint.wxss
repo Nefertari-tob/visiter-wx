@@ -1,0 +1,196 @@
+.container{
+  background-color: #F5F4F9;
+  height: 100vh;
+  /* display: flex;
+  flex-direction: column;
+  justify-content: space-between; */
+  /* height: auto;
+  overflow: auto; */
+}
+/* .box{
+  background-color: aqua;
+} */
+.head{
+  width: 700rpx;
+  height: 322rpx;
+  margin-top: 24rpx;
+  border-radius: 12rpx;
+  background-color: #FFFFFF;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.head-top{
+  display: flex;
+  justify-content: space-between;
+}
+.user{
+  height: 322rpx;
+  display: flex;
+  align-items: center;
+}
+.user-massage{
+  width: 270rpx;
+  height: 260rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+.userinfo-avatar {
+  width: 156rpx;
+  height: 222rpx;
+  margin-left: 24rpx;
+  margin-right: 24rpx;
+  opacity: 1;
+  border-radius: 8rpx;
+}
+.userinfo-nickname {
+  height: 50rpx;
+  display: flex;
+  font-size: 32rpx;
+  flex-direction: column;
+  justify-content: space-around;
+  color: #666666;
+}
+.choice{
+  font-size: 28rpx;
+  color: #666666;
+}
+/* .choice_one{
+  margin-left: 50rpx;
+} */
+/* radio .wx-radio-input{
+  margin-right: 15rpx;
+  border-radius: 50%;
+  width: 25rpx;
+  height: 25rpx;
+} */
+.phone{
+  width: 450rpx;
+  height: 64rpx;
+  border: 1rpx solid #E8E8E8;
+  border-radius: 8rpx;
+  color: #A4A4A6;
+  padding-left: 20rpx;
+}
+.otheruser{
+  position: absolute;
+  top: 55rpx;
+  right: 50rpx;
+  /* margin-top: 55rpx; */
+  font-size: 24rpx;
+  /* border-radius: 20rpx; */
+  padding:0%;
+  /* margin-left: 50rpx; */
+  font-family: PingFang SC;
+  color: #FF9C00;
+  background-color: #FFFFFF;
+  /* border: 0.3px solid #FF9C00; */
+  /* border-radius: 8rpx; */
+}
+.body{
+  margin-top: 28rpx;
+  width: 700rpx;
+  height: 150rpx;
+  background: #FFFFFF;
+  opacity: 1;
+  border-radius: 12rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+.divLine{
+  background: #F9F9F9;
+  width: 652rpx;
+  height: 2rpx;
+  margin: auto;
+ }
+ .list{
+  height: 80rpx;
+  display: flex;
+  align-items: center;
+ }
+.list1{
+  display: flex;
+  align-items: center;
+  height: 40rpx;
+  margin-left: 26rpx;
+}
+.list_text{
+  font-size: 28rpx;
+  margin-left: 10rpx;
+}
+.list_img{
+  width: 12rpx;
+  height: 12rpx;
+}
+.listbottom{
+  height: 80rpx;
+  display: flex;
+  align-items: center;
+}
+.election{
+  height: 44rpx;
+  width: 620rpx;
+  margin-left: 26rpx;
+  display: flex;
+  justify-content: start;
+}
+.picker{
+  width: 600rpx;
+  font-size: 32rpx;
+  color: #555555;
+  font-family: PingFang SC;
+}
+.election_img{
+  width: 15rpx;
+  height: 24rpx;
+  margin-top: 10rpx;
+}
+.terpho{
+  margin-left: 25rpx;
+}
+.terpho_in{
+  border: 1rpx solid #A4A4A6;
+  color: #A4A4A6;
+  width: 550rpx;
+  height: 64rpx;
+  border-radius: 8rpx;
+  padding-left: 20rpx;
+}
+.terpho_but{
+  color:#FFFFFF;
+  width: 140rpx;
+  height: 64rpx;
+  font-size: 28rpx;
+  line-height: 64rpx;
+  text-align: center;
+  background-color: #7ACBB3;
+  border-radius: 8rpx;
+  margin-left: 48rpx;
+}
+.bottom{
+  margin-top: 28rpx;
+  width: 700rpx;
+  height: 400rpx;
+  background-color: #FFFFFF;
+  border-radius: 12rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+.message{
+  height: 40rpx;
+  font-size: 28rpx;
+  color: #333333;
+  line-height: 40rpx;
+  margin-left: 28rpx;
+}
+.but{
+  padding: 0;
+  background-color: #7ACBB3;
+  color: #FFFFFF;
+  font-size: 28rpx;
+  font-weight: 400;
+  margin-bottom: 80rpx;
+}
